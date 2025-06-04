@@ -45,7 +45,7 @@ def supervisor_node(state: State) -> Command[Literal["publisher_node", "research
     elif result.next_node == "end_node":
 
         return Command(
-            goto={END},
+            goto=END,
             update={"messages": [HumanMessage(content="Finishing the Process...", name="supervisor")]}
         )
 
